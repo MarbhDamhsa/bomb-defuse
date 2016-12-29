@@ -7,6 +7,7 @@ If you cut a green one you have to cut a orange or white one
 If you cut a purple cable you can't cut a purple, green, orange or white cable
 -}
 
+--Import for toUpper
 import Data.Char
 
 data Wire = White 
@@ -41,6 +42,7 @@ out :: Maybe Wire -> String
 out Nothing = "BOOM"
 out _       = "Bomb defused"
 
+--Takes list of wire inputs from user and determines if the bomb was successfully defused
 solve :: [Wire] -> String
 solve (x:xs) = out $ foldl cutWire (Just x) xs
  
